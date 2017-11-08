@@ -203,6 +203,12 @@ zplug "modules/prompt", from:prezto
 # Load if "if" tag returns true
 zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 
+# Using prezto
+zplug "modules/osx", from:prezto, if:"[[ $OSTYPE == *darwin* ]]"
+zplug "modules/prompt", from:prezto
+# Set zstyle before zplug load
+zstyle ':prezto:module:prompt' theme 'sorin'
+
 # Run a command after a plugin is installed/updated
 # Provided, it requires to set the variable like the following:
 # ZPLUG_SUDO_PASSWORD="********"
