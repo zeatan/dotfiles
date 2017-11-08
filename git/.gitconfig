@@ -43,5 +43,5 @@
         skipped = !git ls-files -v | grep ^S
 [credential]
         helper = cache
- [include]
-  path = .gitconfig.user
+[include]
+        path = .gitconfig.user
