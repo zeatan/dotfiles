@@ -1,9 +1,6 @@
 # Avoid logging out by Ctrl+D
 setopt IGNOREEOF
 
-# Lang
-export LANG=ja_JP.UTF-8
-
 # Use colors
 autoload -Uz colors
 colors
