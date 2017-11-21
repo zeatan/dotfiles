@@ -6,4 +6,3 @@ source "$ZDIR/.zoptions"
 source "$ZDIR/.zaliases"
 
 source "$ZDIR/.zplugins"
-
