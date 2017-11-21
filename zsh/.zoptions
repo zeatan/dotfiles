@@ -1,0 +1,55 @@
+# Avoid logging out by Ctrl+D
+setopt IGNOREEOF
+
+# Lang
+#export LANG=ja_JP.UTF-8
+
+# Use colors
+autoload -Uz colors
+colors
+
+# Autocomplete
+autoload -Uz compinit
+compinit
+
+# Share history with other terminal
+setopt share_history
+
+# Unique command in history
+setopt histignorealldups
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# Enable change dir by dir name only without cd
+setopt auto_cd
+
+# Exec pushd auto
+setopt auto_pushd
+
+# Remove dupricated dir from pushd stack
+setopt pushd_ignore_dups
+
+# Correct command miss type
+setopt correct
+
+###########
+# Functions
+###########
+
+# git checkout
+compdef _gitch_comp gitch
+function gitch {
+    git checkout $1
+}
+compdef _gitch_comp gitchb
+function gitchb {
+    git checkout -b `echo $1 | sed "s/^\*\s*//" | sed "s/remotes\/[^\/]*\/\(\S*\)/\1 \0/"`
+}
+# gitch autocomplete
+function _gitch_comp {
+    compadd `git branch -a | grep -v -e"^\*" | tr -d ' '`
+    return 1
+}
+
