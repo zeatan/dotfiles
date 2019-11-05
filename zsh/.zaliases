@@ -12,6 +12,12 @@ alias -g @S='| sort'
 alias -g @W='| wc'
 alias -g @X='| xargs'
 
+# Force interactive
+alias crontab='crontab -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
 # For support using sudo
 alias sudo='sudo '
 
